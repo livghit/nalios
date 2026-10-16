@@ -1,0 +1,15 @@
+# Rust build output (Cargo.lock should be committed once the app workspace exists)
+/target/
+
+# Private/local working material and credentials
+/private/
+/local/
+.env
+.env.*
+!.env.example
+
+# Editor/OS temporary files
+*.swp
+*.swo
+*~
+.DS_Store
