@@ -1,0 +1,29 @@
+[package]
+name = "nalios-shell"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+description = "NaliOS Rust desktop presentation and composition boundary"
+readme = "README.md"
+autobins = false
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "nalios-shell-dev"
+path = "src/main.rs"
+
+[dependencies]
+nalios-core.workspace = true
+nalios-app.workspace = true
+nalios-platform.workspace = true
+time.workspace = true
+
+# GPUI, pinned to one Zed revision (see docs/decisions/0006). The spike
+# passed live evaluation; this is now the shell UI stack.
+gpui = { git = "https://github.com/zed-industries/zed", rev = "2d4c4831943153f63ad0aeddf49c8f5a3d008e75", default-features = false, features = ["wayland"] }
+gpui_platform = { git = "https://github.com/zed-industries/zed", rev = "2d4c4831943153f63ad0aeddf49c8f5a3d008e75", default-features = false, features = ["wayland"] }
+
+[lints]
+workspace = true

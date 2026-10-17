@@ -1,0 +1,26 @@
+[package]
+name = "nalios-platform"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+description = "NaliOS Linux and Niri adapter boundary"
+readme = "README.md"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+nalios-core.workspace = true
+nalios-app.workspace = true
+freedesktop-desktop-entry.workspace = true
+freedesktop-icons.workspace = true
+rustix.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

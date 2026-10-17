@@ -5,6 +5,11 @@ the shell functions. The user designs/writes the implementation and approves
 the identity. No Caelestia layouts/assets or prototype wallpapers are imported
 by this plan.
 
+The [theme and experience specification](themes.md) turns this brief into a
+proposed top-bar/launcher/full-dashboard layout, initial Night/Day tokens,
+component states, app-theme support matrix and safe preview/apply/revert
+contract. Those drafts need author approval; they are not finished artwork.
+
 ## Desired character
 
 NaliOS should feel like one intentional personal desktop, not a collection of

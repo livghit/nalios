@@ -1,4 +1,4 @@
-# Rust build output (Cargo.lock should be committed once the app workspace exists)
+# Rust build output (keep the workspace Cargo.lock in version control)
 /target/
 
 # Private/local working material and credentials

@@ -1,0 +1,152 @@
+package	candidate	installed	source
+niri	NO_CANDIDATE	NO_METADATA	-
+xwayland-satellite	NO_CANDIDATE	NO_METADATA	-
+xwayland	2:24.1.13-1	2:24.1.13-1	xwayland
+systemd	262-1	262-1	systemd
+dbus-user-session	1.16.2-5+b1	1.16.2-5+b1	dbus (1.16.2-5)
+dbus-broker	37-5	(none)	dbus-broker
+libpam-systemd	262-1	262-1	systemd
+libwayland-server0	1.26.0-1	1.26.0-1	wayland
+xdg-user-dirs	0.20-1	0.20-1	xdg-user-dirs
+xdg-utils	1.2.1-2	1.2.1-2	xdg-utils
+libglib2.0-bin	2.90.0-1	2.90.0-1	glib2.0
+desktop-file-utils	0.28-1	0.28-1	desktop-file-utils
+wayland-protocols	1.49-1	(none)	wayland-protocols
+wlr-protocols	NO_CANDIDATE	NO_METADATA	-
+libwayland-dev	1.26.0-1	1.26.0-1	wayland
+libxkbcommon-dev	1.13.1-1	1.13.1-1	libxkbcommon
+libinput-dev	1.31.3-1	1.31.3-1	libinput
+libgbm-dev	26.1.6-1	26.1.6-1	mesa
+libegl-dev	1.7.0-3+b1	1.7.0-3+b1	libglvnd (1.7.0-3)
+libudev-dev	262-1	262-1	systemd
+libdbus-1-dev	1.16.2-5+b1	1.16.2-5+b1	dbus (1.16.2-5)
+libsystemd-dev	262-1	262-1	systemd
+libseat-dev	0.9.3-1	0.9.3-1	seatd
+libpango1.0-dev	1.58.0-1	1.58.0-1	pango1.0
+libdisplay-info-dev	0.3.0-1+b1	0.3.0-1+b1	libdisplay-info (0.3.0-1)
+mesa-utils	9.0.0-2+b3	9.0.0-2+b3	mesa-demos (9.0.0-2)
+mesa-vulkan-drivers	26.1.6-1	26.1.6-1	mesa
+libgl1-mesa-dri	26.1.6-1	26.1.6-1	mesa
+firmware-amd-graphics	20260810-1	20260810-1	firmware-nonfree
+firmware-realtek	20260810-1	20260810-1	firmware-nonfree
+bluez	5.87-4	5.87-4	bluez
+rfkill	2.42.3-1	2.42.3-1	util-linux
+network-manager	1.58.1-1	1.58.1-1	network-manager
+network-manager-gnome	NO_CANDIDATE	(none)	-
+nm-connection-editor	1.36.0-5	1.36.0-5	network-manager-applet
+network-manager-applet	1.36.0-5	1.36.0-5	network-manager-applet
+network-manager-openvpn	1.12.5-2	1.12.5-2	network-manager-openvpn
+network-manager-openvpn-gnome	1.12.5-2	1.12.5-2	network-manager-openvpn
+network-manager-openconnect	1.2.10-4.1	1.2.10-4.1	network-manager-openconnect
+network-manager-openconnect-gnome	1.2.10-4.1	1.2.10-4.1	network-manager-openconnect
+pipewire	1.6.9-2	1.6.9-2	pipewire
+pipewire-audio	1.6.9-2	1.6.9-2	pipewire
+pipewire-pulse	1.6.9-2	1.6.9-2	pipewire
+wireplumber	0.5.17-1	0.5.17-1	wireplumber
+libspa-0.2-bluetooth	1.6.9-2	1.6.9-2	pipewire
+libpipewire-0.3-dev	1.6.9-2	1.6.9-2	pipewire
+libpulse-dev	17.0+dfsg1-3	(none)	pulseaudio
+pulseaudio-utils	17.0+dfsg1-3	17.0+dfsg1-3	pulseaudio
+pavucontrol	6.1-1	6.1-1	pavucontrol
+playerctl	2.4.1-4	2.4.1-4	playerctl
+upower	1.91.4-1	1.91.4-1	upower
+power-profiles-daemon	0.30-2	0.30-2	power-profiles-daemon
+brightnessctl	0.5.1-3.1	0.5.1-3.1	brightnessctl
+swayidle	1.9.0-1	1.9.0-1	swayidle
+swaylock	1.8.6-1	1.8.6-1	swaylock
+swaylock-effects	NO_CANDIDATE	NO_METADATA	-
+gtklock	4.0.0-1	(none)	gtklock
+polkitd	127+really127-3kali1	127+really127-3kali1	policykit-1
+polkit-gnome	NO_CANDIDATE	NO_METADATA	-
+policykit-1-gnome	NO_CANDIDATE	(none)	-
+plasma-polkit-agent	NO_CANDIDATE	NO_METADATA	-
+lxqt-policykit	2.4.0-1	(none)	lxqt-policykit
+mate-polkit	1.26.1-6	1.26.1-6	mate-polkit
+gnome-keyring	51.1-1	51.1-1	gnome-keyring
+libpam-gnome-keyring	51.1-1	51.1-1	gnome-keyring
+libsecret-1-0	0.21.7-2+b1	0.21.7-2+b1	libsecret (0.21.7-2)
+libsecret-1-dev	0.21.7-2+b1	(none)	libsecret (0.21.7-2)
+libsecret-tools	0.21.7-2+b1	(none)	libsecret (0.21.7-2)
+gcr4	4.4.1-3	4.4.1-3	gcr4
+xdg-desktop-portal	1.22.1+ds-1	1.22.1+ds-1	xdg-desktop-portal
+xdg-desktop-portal-gnome	50.0-1	50.0-1	xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk	1.15.3-2	1.15.3-2	xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr	0.8.4-1	(none)	xdg-desktop-portal-wlr
+libgtk-4-dev	4.22.4+ds-1	(none)	gtk4
+libgtk-4-1	4.22.4+ds-1	4.22.4+ds-1	gtk4
+libgtk4-layer-shell-dev	1.3.0-1+b1	(none)	gtk4-layer-shell (1.3.0-1)
+libgtk4-layer-shell0	1.3.0-1+b1	(none)	gtk4-layer-shell (1.3.0-1)
+gtk4-layer-shell	NO_CANDIDATE	NO_METADATA	-
+gsettings-desktop-schemas	51.0-2	51.0-2	gsettings-desktop-schemas
+adwaita-icon-theme	51.0-1	51.0-1	adwaita-icon-theme
+fonts-inter	4.1+ds1-4	4.1+ds1-4	fonts-inter
+fonts-noto-core	20201225-6	20201225-6	fonts-noto
+fonts-noto-color-emoji	2.051-1	2.051-1	fonts-noto-color-emoji
+fonts-noto-mono	20201225-6	20201225-6	fonts-noto
+fonts-dejavu-core	2.37-9	2.37-9	fonts-dejavu
+fonts-jetbrains-mono	2.304+ds-6.1	(none)	fonts-jetbrains-mono
+foot	1.28.0-1	(none)	foot
+alacritty	0.17.0-2	0.17.0-2	rust-alacritty
+kitty	0.48.2-1.1	(none)	kitty
+firefox-esr	140.16.0esr-1	140.16.0esr-1	firefox-esr
+thunar	4.20.10-1	4.20.10-1	thunar
+nautilus	50.2.2-2	50.2.2-2	nautilus
+xarchiver	1:0.5.4.26-1	(none)	xarchiver
+gvfs	1.62.0-3	1.62.0-3	gvfs
+gvfs-backends	1.62.0-3	1.62.0-3	gvfs
+gvfs-fuse	1.62.0-3	1.62.0-3	gvfs
+udisks2	2.11.2-1	2.11.2-1	udisks2
+udiskie	2.7.0-1	(none)	udiskie
+xdg-terminal-exec	0.14.3-2	0.14.3-2	xdg-terminal-exec
+mako-notifier	1.11.0-1	(none)	mako-notifier
+dunst	1.13.2-1	(none)	dunst
+swww	NO_CANDIDATE	NO_METADATA	-
+awww	NO_CANDIDATE	NO_METADATA	-
+swaybg	1.2.2-1	1.2.2-1	swaybg
+wl-clipboard	2.3.0-1	2.3.0-1	wl-clipboard
+cliphist	0.5.0-1+b11	0.5.0-1+b11	cliphist (0.5.0-1)
+grim	1.5.0+ds-1	1.5.0+ds-1	grim
+slurp	1.6.0really1.5.0-1	1.6.0really1.5.0-1	slurp
+swappy	1.5.1-2	1.5.1-2	swappy
+libnotify-bin	0.8.8-1+b1	0.8.8-1+b1	libnotify (0.8.8-1)
+wlogout	1.2.2-1	(none)	wlogout
+fuzzel	1.15.0+ds-1	1.15.0+ds-1	fuzzel
+blueman	2.4.4-1+b1	2.4.4-1+b1	blueman (2.4.4-1)
+bluetuith	NO_CANDIDATE	NO_METADATA	-
+wl-mirror	0.18.5-1	(none)	wl-mirror
+qt6ct	0.11-2+b1	0.11-2+b1	qt6ct (0.11-2)
+gnome-console	51~rc-2	(none)	gnome-console
+orca	51.0-4	51.0-4	orca
+kali-menu	2026.3.4	2026.3.4	kali-menu
+kali-tools-top10	2026.3.9	2026.3.9	kali-meta
+kali-linux-default	2026.3.9	2026.3.9	kali-meta
+build-essential	12.12	12.12	build-essential
+pkg-config	2.5.1-4	2.5.1-4	pkgconf
+git	1:2.53.0-1	1:2.53.0-1	git
+curl	8.22.0-1	8.22.0-1	curl
+ca-certificates	20260816	20260816	ca-certificates
+rustc	1.95.0+dfsg1-2	1.95.0+dfsg1-2	rustc
+cargo	1.95.0+dfsg1-2	1.95.0+dfsg1-2	rustc
+rustfmt	1.95.0+dfsg1-2	(none)	rustc
+rust-clippy	1.95.0+dfsg1-2	(none)	rustc
+rustup	1.27.1-8+b2	(none)	rustup (1.27.1-8)
+clang	1:21.1.8-74	1:21.1.8-74	llvm-defaults (0.74)
+mold	2.42.1+dfsg-1	(none)	mold
+libssl-dev	3.6.4-1	3.6.4-1	openssl
+debhelper	14.5	(none)	debhelper
+devscripts	2.26.12	(none)	devscripts
+dh-cargo	34	(none)	dh-cargo
+lintian	2.141.0	(none)	lintian
+autopkgtest	6.0	(none)	autopkgtest
+shellcheck	0.11.0-2+b1	(none)	shellcheck (0.11.0-2)
+shfmt	3.14.1-1	(none)	golang-mvdan-sh
+python3-pytest	9.1.1-1	9.1.1-1	pytest
+libvirt-daemon-system	12.7.0-1	12.7.0-1	libvirt
+libvirt-clients	12.7.0-1	12.7.0-1	libvirt
+qemu-system-x86	1:11.1.0+ds-2	1:11.1.0+ds-2	qemu
+qemu-utils	1:11.1.0+ds-2	1:11.1.0+ds-2	qemu
+virt-viewer	11.0-4	11.0-4	virt-viewer
+virt-manager	1:5.1.0-2	1:5.1.0-2	virt-manager
+ovmf	2026.08+ds-2	(none)	edk2
+swtpm	0.10.2-1	(none)	swtpm
+cryptsetup	2:2.8.8-1	2:2.8.8-1	cryptsetup

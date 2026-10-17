@@ -115,6 +115,10 @@ replace the prototype's additional shortcuts.
 
 ## Quality requirements
 
+- All first-party executable behavior and tests are Rust. Keep a toolkit-free
+  core and shared application workflows separate from platform adapters/UI;
+  see the [architecture](architecture.md). External services/native libraries
+  remain reviewed dependencies, not rewritten just to satisfy a language label.
 - One owner per desktop service and clear lifecycle boundaries.
 - Service state is authoritative; buttons do not report success before the
   backend confirms it.

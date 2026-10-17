@@ -10,6 +10,15 @@ For every implemented component record its status, entry points, dependencies,
 config keys, error states, tests, and the supported platform versions. Nothing
 in this catalog is implemented merely because it is listed.
 
+The [first-party source map](implementation.md) assigns these capabilities to
+proposed Rust modules/files and tests. The revised [architecture](architecture.md)
+separates pure core values, shared app workflows/ports and platform
+implementations, with thin CLI/shell frontends. All first-party behavior/tests are Rust; create modules,
+not a crate/daemon per row. The [package inventory](packages.md),
+[source register](sources.md), [session contract](session.md), and
+[theme specification](themes.md) define their concrete integration inputs.
+The [master plan](master-plan.md) supplies the end-to-end execution order.
+
 ## Foundation
 
 ### C01 — configuration, state, and error core
@@ -56,8 +65,10 @@ in this catalog is implemented merely because it is listed.
 - **Why:** reliable launching is the first useful desktop feature.
 - **Write:** XDG desktop-entry discovery/filtering/index, search/ranking,
   optional favorites, terminal/URL actions, launch result/error display.
-- **Reuse:** a reviewed desktop-entry implementation, e.g. GIO, rather than
-  splitting `Exec` as a shell string. Audit its actual native/binding licenses.
+- **Reuse:** a reviewed Rust desktop-entry parser plus explicitly tested
+  launching/activation semantics, not a naive `Exec` split. GIO is no longer
+  assumed under the Rust-native direction. A parser alone is not a launcher;
+  review licenses, field codes, terminal and D-Bus activation behavior.
 - **Done when:** Firefox ESR, a GUI tool, a terminal-only entry, names/paths
   with spaces, hidden/NoDisplay entries, and failed launches behave correctly;
   repeated shortcuts do not create duplicate launcher instances.

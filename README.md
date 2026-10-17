@@ -3,21 +3,50 @@
 An original, user-authored Rust desktop layer for **Kali Linux + upstream
 Niri**, built first for the author's laptop.
 
-**Status: planning repository.** No Rust implementation, Cargo workspace,
-installer, or runnable desktop is present yet. The author will write the code;
-the assistant supports specifications, architecture, reviews, and test planning.
+**Status: early implementation.** `nalios-dev` implements `--help`,
+`--version`, `config check`, passive `doctor` diagnostics (text and versioned
+JSON), a read-only `niri inspect` snapshot, `niri watch` event streaming,
+`shell` control actions and `apps` catalog commands. `nalios-core` provides
+pure path/config/Niri domain values; `nalios-app` owns config,
+diagnostic and Niri reducer workflows; `nalios-platform` supplies bounded file
+reads, passive host probes and an independent Niri IPC client with a bounded
+event stream, stale-state marking and reconnect backoff, verified against the
+running Niri 26.04 session. A private, peer-checked control socket lets the CLI
+toggle the launcher. Device controls, themes and the installer remain
+unimplemented. GPUI was accepted after a live spike; the development shell
+(`nalios-shell-dev`) builds with a layer-shell bar, an icon-and-search launcher
+with config favorites, and a full dashboard on live Niri state. No license has been selected; reviewed
+dependencies are recorded in
+decisions
+[0004](docs/decisions/0004-core-config-dependencies.md),
+[0005](docs/decisions/0005-niri-json-dependency.md),
+[0006](docs/decisions/0006-ui-toolkit-spike.md) and
+[0007](docs/decisions/0007-shell-control-channel.md).
 
 ## Start here
 
+- [Workspace setup](crates/README.md): current structure, crate boundaries,
+  temporary library targets, and offline validation commands.
+- [Scaffold decision](docs/decisions/0003-architecture-only-scaffold.md): what
+  was set up and what was deliberately left unimplemented.
+- [Rust architecture](docs/blueprint/architecture.md): crate boundaries, shared
+  workflows, runtime/state ownership, UI selection, and test rules.
+- [First implementation milestone](docs/blueprint/first-milestone.md): the exact
+  next changes to build a safe headless CLI before the shell.
+- [Complete desktop delivery plan](docs/blueprint/master-plan.md): usable
+  milestones, decisions, risks, and what “finished” means.
 - [Documentation index](docs/README.md)
-- [Build blueprint](docs/blueprint/README.md): product, roles, ownership,
-  architecture, 25 components, roadmap, tests, and original design/artwork.
+- [Build blueprint](docs/blueprint/README.md): product, architecture, 25
+  components, exact package/source inventories, proposed Rust modules, session
+  integration, original themes, packaging, and acceptance gates.
 - [Repository boundary decision](docs/decisions/0001-repository-boundary.md):
   naming, separation from the prototype, and compatibility paths.
 
-The next task is to complete T001's license/dependency decisions, then create
-the minimal workspace described by T002. Do not treat the presence of planning
-documents as completed software.
+Continue with the [first milestone](docs/blueprint/first-milestone.md): F01–F06
+are implemented or partially implemented; all UI work remains. Review
+dependencies as added; license, UI/runtime and compositor supply decisions
+remain open. Nothing here installs or replaces the current desktop, commands,
+prototype, configuration or VM data.
 
 ## Repository boundary
 
@@ -50,18 +79,27 @@ added on the author's behalf. Choose the code/documentation/artwork policies
 and review dependencies before public distribution. This is not a GPL-free
 operating system or a claim of ownership over upstream projects.
 
-## Proposed implementation structure
+## Workspace structure
 
-The user will create these as the relevant tickets begin:
+These package boundaries exist; their source roots contain documentation only:
 
 ```text
-crates/nalios-core       configuration, themes, state, shared errors
-crates/nalios-platform   independently written Niri/system adapters
-crates/nalios-cli        diagnostics, commands, recovery controls
-crates/nalios-shell      original bar, launcher, dashboard, settings
+crates/nalios-core       pure domain/config/theme values and validation
+crates/nalios-app        shared workflows, state reducers, ports, task ownership
+crates/nalios-platform   independently written Niri/Linux/file adapters
+crates/nalios-cli        headless commands, output and application wiring
+crates/nalios-shell      original Rust UI, interaction state and application wiring
 ```
 
-GTK4 Rust bindings/layer-shell are a UI candidate pending a technical and
-license review. No dependencies have been selected or installed by this setup.
-Future original artwork should include editable sources and provenance; do not
-copy the prototype's asset collection into this repository automatically.
+Reserved resource roots are [`config/`](config/README.md),
+[`assets/`](assets/README.md), [`packaging/`](packaging/README.md), and
+[`tests/`](tests/README.md). They contain guidance and directory markers, not
+usable defaults, assets, installers or tests. The CLI now has an explicit
+development binary (`nalios-dev`); the shell still has no binary target.
+
+**All first-party executable code and tests stay in Rust.** The revised UI
+spike prioritizes Iced + `iced_exwlshell`; GTK is no longer assumed. Native
+OS/graphics dependencies remain explicit review boundaries, not a false promise
+of zero C anywhere in Kali. See [decision 0002](docs/decisions/0002-rust-codebase-boundaries.md).
+No toolkit is approved or installed by this plan. Original artwork needs
+editable sources/provenance; never automatically import prototype assets.

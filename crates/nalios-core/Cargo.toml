@@ -1,0 +1,18 @@
+[package]
+name = "nalios-core"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+description = "NaliOS pure domain, configuration and theme boundary (scaffold only)"
+readme = "README.md"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+serde.workspace = true
+thiserror.workspace = true
+toml.workspace = true
+
+[lints]
+workspace = true

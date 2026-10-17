@@ -1,0 +1,24 @@
+[package]
+name = "nalios-cli"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+description = "NaliOS headless presentation and composition boundary"
+readme = "README.md"
+autobins = false
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "nalios-dev"
+path = "src/main.rs"
+
+[dependencies]
+nalios-core.workspace = true
+nalios-app.workspace = true
+nalios-platform.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

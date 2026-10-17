@@ -1,0 +1,58 @@
+[workspace]
+members = [
+    "crates/nalios-core",
+    "crates/nalios-app",
+    "crates/nalios-platform",
+    "crates/nalios-cli",
+    "crates/nalios-shell",
+]
+# Keep ordinary workspace commands focused on the future headless entry point.
+default-members = ["crates/nalios-core", "crates/nalios-cli"]
+resolver = "3"
+
+[workspace.package]
+version = "0.0.0"
+edition = "2024"
+publish = false
+# The author has not selected a license. Do not infer one from this scaffold.
+
+[workspace.dependencies]
+# Local architecture edges.
+nalios-core = { path = "crates/nalios-core" }
+nalios-app = { path = "crates/nalios-app" }
+nalios-platform = { path = "crates/nalios-platform" }
+
+# Reviewed permissive dependencies for the pure configuration engine.
+serde = { version = "1.0.228", features = ["derive"] }
+thiserror = "2.0.18"
+toml = "1.1.2"
+
+# Niri IPC is newline-delimited JSON over a Unix socket.
+serde_json = "1.0.149"
+
+# Peer credentials for the private shell-control socket.
+rustix = { version = "1.1.5", features = ["net", "process"] }
+
+# Reviewed desktop-entry parser for the application catalog (MPL-2.0).
+freedesktop-desktop-entry = { version = "0.8.3", default-features = false }
+
+# Icon-theme lookup for launcher results (MIT).
+freedesktop-icons = "0.4.0"
+
+# Local-time formatting for the shell clock/dashboard (MIT OR Apache-2.0).
+time = { version = "0.3.55", features = ["local-offset"] }
+
+# Test-only helper for disposable filesystem fixtures.
+tempfile = "3.27.0"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unused_must_use = "deny"
+
+[workspace.lints.clippy]
+await_holding_lock = "deny"
+dbg_macro = "deny"
+todo = "deny"
+unimplemented = "deny"
+unwrap_used = "warn"
+expect_used = "warn"

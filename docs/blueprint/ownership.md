@@ -74,17 +74,29 @@ For each Cargo crate **and native library**, record:
 - update/security review status and replacement/fallback options.
 
 Permissive dependencies are the default preference, not an approved list.
-GTK/native libraries may use LGPL licenses: they can often be used without
-licensing the application as GPL, but have their own conditions, including
-ones affected by linking/redistribution. GTK Rust bindings do not erase the
-native GTK library's license. A strictly all-permissive linked dependency
-policy would change the UI-toolkit choice and must be decided explicitly.
+Rust-only first-party code and Rust-native UI preference are now explicit in
+[decision 0002](../decisions/0002-rust-codebase-boundaries.md). They do not imply
+an all-permissive or zero-native-library graph. For example, the evaluated Rust
+desktop-entry parser publishes MPL-2.0, and native system bindings may use LGPL
+libraries; both need an actual compatibility/redistribution review.
+
+GTK is no longer the default UI proposal. If considered again by explicit
+exception, Rust bindings do not erase GTK's native license or language. LGPL
+libraries can often be used without licensing the application as GPL, but
+conditions depend on the actual linkage/redistribution. A stricter all-permissive
+linked-dependency policy requires a deliberate decision.
 
 Do not auto-approve GPL/AGPL linked application dependencies or unknown
 licenses. A deny rule is a review gate, not a substitute for interpreting
 license expressions correctly. Adopt license/security tooling such as
 `cargo-deny`, `cargo-audit`, and a software bill of materials once dependencies
 exist; tools supplement manual review.
+
+The [source register](sources.md) now identifies candidate crate releases,
+published direct-crate licenses, external code families and API references.
+The [package snapshot](../research/README.md) records cached Debian source-package
+metadata. Neither is an approval of a linked/transitive/native dependency graph
+or a replacement for the author's first-party license decision.
 
 ## Choose the first-party license explicitly
 

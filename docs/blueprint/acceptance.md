@@ -5,6 +5,12 @@ The user runs real hardware tests and approves any operation that can disrupt
 network, sessions, storage, or guests. Do destructive/privileged experiments
 only with disposable data and an accessible recovery path.
 
+The [delivery contract](delivery.md#7-test-gates-and-evidence) maps these A01–A12
+scenarios to release gates; the [session specification](session.md) and
+[theme specification](themes.md) define the exact ownership, secure sleep and
+apply/recovery behavior under test. The [research snapshot](../research/README.md)
+is read-only metadata evidence, not a record of passing integration tests.
+
 ## Test layers
 
 | Layer | What it proves | What it does not prove |
@@ -135,6 +141,27 @@ uninstall; rollback. Keep another login session/TTY available. No blanket
 package removal, passwordless admin rule, driver/firmware replacement, deletion
 of VM data, or loss of unrelated user configuration. Track the supported
 Niri/system-service/toolkit versions without freezing Kali security updates.
+
+## Rust architecture gates
+
+In addition to functional scenarios, enforce the [architecture](architecture.md):
+
+- [ ] First-party executable code/tests/automation are Rust; config/assets are
+  non-executable data, not concealed shell/Python/QML behavior.
+- [ ] Cargo graph follows core ← app ← platform with CLI/shell composition
+  roots; app does not import platform, CLI does not import shell.
+- [ ] Core and app tests need no display, D-Bus, root, network or real home;
+  no renderer/GTK/GIO graph leaks into headless CLI through enabled features.
+- [ ] CLI and GUI use the same workflow/state rules, with one mutation owner
+  for each session/transaction; no direct widget-to-system calls.
+- [ ] Runtime/executor ownership, bounded queues, task cancellation, unknown
+  outcomes and stale-epoch results have tests.
+- [ ] T007 proves Rust-native layer surfaces and normal-window strategy, real
+  input/IME/accessibility, scaling/hotplug and idle rendering; no automatic
+  fallback to a different toolkit or silent accessibility claim.
+
+The [first milestone](first-milestone.md) narrows these gates to concrete initial
+changes. Private scaffolding is not a distribution, hardware or UI-test result.
 
 ## Security release gates
 
